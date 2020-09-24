@@ -1,6 +1,6 @@
-import { NextPage } from "next";
-import { ethers, Contract } from "ethers";
-import Head from "next/head";
+import { NextPage } from 'next';
+import { ethers, Contract } from 'ethers';
+import Head from 'next/head';
 
 function parseLogs(logs: ethers.providers.Log[], contract: Contract): any[] {
   let iface = new ethers.utils.Interface(contract.interface.abi);
@@ -27,7 +27,7 @@ function parseLogs(logs: ethers.providers.Log[], contract: Contract): any[] {
 
 const getAddresses = () => {
   const provider = new ethers.providers.JsonRpcProvider(
-    "https://mainnet.infura.io/v3/ab962fb32dfc49a8ab6ab72a6a318c85"
+    "https://mainnet.infura.io/v3/07a3ebfe321d45b8b250ea9adec14cad"
   );
 
   // prettier-ignore
@@ -43,7 +43,7 @@ const getAddresses = () => {
 
   let filter = {
     address: contractAddress,
-    fromBlock: 8960961, // Block of Contract's first transaction
+    fromBlock: 10912982, // Block of Contract's first transaction
     toBlock: "latest",
     topics: []
   };
